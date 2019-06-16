@@ -56,8 +56,8 @@
         "allow": [],
         "depConstraints": [
           {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": ["*"]
+            "sourceTag": "scope:ui",
+            "onlyDependOnLibsWithTags": ["scope:ui"]
           }
         ]
       }

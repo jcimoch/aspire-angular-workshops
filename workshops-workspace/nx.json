@@ -12,7 +12,10 @@
       "tags": []
     },
     "nasa": {
-      "tags": []
+      "tags": ["scope:nasa"]
+    },
+    "ui": {
+      "tags": ["scope:ui"]
     }
   }
 }
