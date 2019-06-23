@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {AppConfigService} from "../core/services/app-config.service";
 
 @Component({
   selector: 'main-nav',
@@ -14,7 +15,10 @@ export class MainNavComponent {
     .pipe(
       map(result => result.matches)
     );
+  isGodModeActive: boolean;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private appConfigService: AppConfigService) {
+    this.isGodModeActive = appConfigService.getConfig().config.isGodModeActive;
+  }
 
 }
