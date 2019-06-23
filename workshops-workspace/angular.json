@@ -15,15 +15,24 @@
       "prefix": "workshops-workspace",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./apps/nasa/webpack.config.js"
+            },
             "outputPath": "dist/apps/nasa",
             "index": "apps/nasa/src/index.html",
             "main": "apps/nasa/src/main.ts",
             "polyfills": "apps/nasa/src/polyfills.ts",
             "tsConfig": "apps/nasa/tsconfig.app.json",
-            "assets": ["apps/nasa/src/favicon.ico", "apps/nasa/src/assets"],
-            "styles": ["apps/nasa/src/styles.scss"],
+            "assets": [
+              "apps/nasa/src/favicon.ico",
+              "apps/nasa/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/nasa/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -54,8 +63,11 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./apps/nasa/webpack.config.js"
+            },
             "browserTarget": "nasa:build"
           },
           "configurations": {
@@ -77,7 +89,9 @@
               "apps/nasa/tsconfig.app.json",
               "apps/nasa/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -136,7 +150,9 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {

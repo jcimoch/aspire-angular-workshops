@@ -4,6 +4,6 @@ describe('nasa', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
-    getGreeting().contains('Welcome to nasa!');
+    getGreeting().contains('Welcome to Nasa!');
   });
 });
