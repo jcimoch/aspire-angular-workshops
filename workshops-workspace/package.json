@@ -54,7 +54,7 @@
     "@nrwl/jest": "8.1.0",
     "jest": "24.1.0",
     "@types/jest": "24.0.9",
-    "ng-packagr": "^5.1.0",
+    "ng-packagr": "^10.1.1",
     "ts-jest": "24.0.0",
     "@nrwl/workspace": "8.1.0",
     "@types/node": "~8.9.4",
